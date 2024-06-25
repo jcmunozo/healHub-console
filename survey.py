@@ -18,9 +18,9 @@ class Survey:
 
     def conduct_survey(self):
         response = {}
-        for question in self.questions:
-            answer = input(f"{question}: ")
-            response[question] = answer
+        for index, question in enumerate(self.questions):
+            answer = input(f"{question}: \n")
+            response[f"Q{index + 1}"] = answer
         
         # Medication and doses section
         medications = {}

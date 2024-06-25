@@ -3,19 +3,30 @@ from survey import Survey
 # Define survey questions
 questions = [
     "En la mañana al despertar siento que me puedo mover desde el primer momento. (1-10)",
-    "Me siento de buen ánimo y con energía la mayor parte del tiempo.  (1-10)",
-    "Duermo toda la noche de corrido, sin interrupciones y siento que he descansado al despertar.  (1-10)",
-    "Puedo realizar las actividades de la vida diaria sin dificultad y sin ayuda (ej. comer, bañarme, vestirme).   (1-10)",
+    "Me siento de buen animo y con energía la mayor parte del tiempo. (1-10)",
+    "Duermo toda la noche de corrido, sin interrupciones y siento que he descansado al despertar. (1-10)",
+    "Puedo realizar las actividades de la vida diaria sin dificultad y sin ayuda (ej. comer, banarme, vestirme). (1-10)",
     "Puedo caminar sin dificultad y sin ayuda. (1-10)",
     "Dolor, siendo 1 que no ha sentido dolor y 10 que ha sentido el peor dolor de su vida. (1-10)",
-    "¿Ha presentado algun síntoma molesto respecto a su tratamiento? (Si/No) Si si, por favor describalo:",
+    "¿Ha presentado algún síntoma molesto respecto a su tratamiento? (Sí/No) Si si, por favor describalo:",
 ]
 
 # Create survey instance
 daily_survey = Survey(questions)
 
 # Conduct the survey
-print("Bienvenido a healHub-console")
+
+print("\n" + "=" * 50)
+print("       BIENVENIDO A ")
+print("=" * 50)
+print("      __ __              __   __ __         __ ")
+print("     / // / ___  ___ _  / /  / // / __ __  / / ")
+print("    / _  / / -_)/ _ `/ / /  / _  / / // / / _ \\")
+print("   /_//_/  \\__/ \\_,_/ /_/  /_//_/  \\_,_/ /_.__/")
+print("\n" + "*" * 20 + " consola " + "*" * 20)
+print("\nTu salud importa! Empecemos con el checkeo diario.")
+print("-" * 50)
+
 daily_survey.conduct_survey()
 
 # Save responses to JSON file
