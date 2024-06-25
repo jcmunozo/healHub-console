@@ -9,6 +9,9 @@ questions = [
     "Puedo caminar sin dificultad y sin ayuda. (1-10)",
     "Dolor, siendo 1 que no ha sentido dolor y 10 que ha sentido el peor dolor de su vida. (1-10)",
     "¿Ha presentado algún síntoma molesto respecto a su tratamiento? (Sí/No) Si si, por favor describalo:",
+    "¿Cuantas veces se desperto?",
+    "Rigidez, siendo 1 nada de rigidez y 10 mucha rigidez. (1-10)",
+    "Pesadillas?. (Sí/No) cuantas"
 ]
 
 # Create survey instance
