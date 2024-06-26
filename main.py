@@ -11,7 +11,8 @@ questions = [
     "¿Ha presentado algún síntoma molesto respecto a su tratamiento? (Sí/No) Si si, por favor describalo:",
     "¿Cuantas veces se desperto?",
     "Rigidez, siendo 1 nada de rigidez y 10 mucha rigidez. (1-10)",
-    "Pesadillas?. (Sí/No) cuantas"
+    "Pesadillas?. (Sí/No) cuantas",
+    "Observaciones"
 ]
 
 # Create survey instance
