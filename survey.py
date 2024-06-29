@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 
 class Survey:
@@ -19,19 +19,19 @@ class Survey:
     def conduct_survey(self):
         response = {}
         for index, question in enumerate(self.questions):
-            answer = input(f"{question}: \n")
+            answer = input(f"\U0001F4DD {question}: \n\t")
             response[f"Q{index + 1}"] = answer
         
         # Medication and doses section
         medications = {}
         while True:
-            med_name = input("ingrese el nombre del medicamento (o presione Enter para finalizar): ")
+            med_name = input("\U0001F48A Ingrese el nombre del medicamento (o presione Enter para finalizar): \n\t")
             if med_name == "":
                 break
             doses = []
             dose_count = 1
             while True:
-                dose = input(f"Ingrese la dosis {dose_count} para {med_name} formato dosis-hora ej. 1-6:30pm (o presione Enter para finalizar): ")
+                dose = input(f"\U0001F552 Ingrese la dosis {dose_count} para {med_name} formato dosis-hora ej. 1-6:30pm (o presione Enter para finalizar): \n\t")
                 if dose == "":
                     break
                 doses.append(dose)
@@ -39,7 +39,8 @@ class Survey:
             medications[med_name] = doses
         
         response['medications'] = medications
-        response['date'] = datetime.now().strftime("%Y-%m-%d")
+        response['date'] =  (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+ 
         self.responses.append(response)
 
     def save_to_json(self, filename):
