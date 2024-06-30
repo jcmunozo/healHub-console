@@ -19,17 +19,17 @@ def bye_msg():
 def is_valid_number(value):
     try:
         if int(value) < 1 or int(value) > 10:
-            return "Ops has ingresado un numero fuera de rango. intentalo de nuevo."
+            return "\n\t \U0000274C Uups has ingresado un numero fuera de rango. Por favor intentalo de nuevo.\n"
         return "Ok"
     except ValueError:
-        return "Ops has ingresado una palabra, intentalo de nuevo."
+        return "\n\t \U0000274C Uups has ingresado una palabra en lugar de un numero. Por favor intentalo de nuevo.\n"
 
 
 def is_valid_string(value):
     if value.lower() in ["si", "sí", "no"]:
         return "Ok"
     else:
-        return "Por favor digite sí o no, intentalo de nuevo."
+        return "\n\t \U0000274C Por favor digite Sí o No he intentalo de nuevo.\n"
 
 def answers(question, question_type):
     while True:
@@ -44,14 +44,15 @@ def answers(question, question_type):
             result = is_valid_string(answer)
             if result == "Ok" and answer.lower() in ["si", "sí"]:
                 if question_type == 2:
-                    return input("Por favor diganos cuales:\n")
+                    return input("\n\t\U0001F50D Por favor diganos cuales:\n\t")
                 else:
                     while True:
-                        value = input("Cuantas?")
-                        if is_valid_number(value) == "Ok":
+                        value = input("\n\t\U0001F50D Cuantas? (1-10)\n\t")
+                        var = is_valid_number(value)
+                        if var == "Ok":
                             return value
                         else:
-                            print(value)
+                            print(var)
             elif result == "Ok":
                 return(answer)
             else:
