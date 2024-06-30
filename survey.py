@@ -1,5 +1,6 @@
 import json
 from datetime import datetime, timedelta
+from utilities import answers
 import os
 
 class Survey:
@@ -18,8 +19,8 @@ class Survey:
 
     def conduct_survey(self):
         response = {}
-        for index, question in enumerate(self.questions):
-            answer = input(f"\U0001F4DD {question}: \n\t")
+        for index, (question, type_question) in enumerate(self.questions.items()):
+            answer = answers(f"\U0001F4DD {question}: \n\t", type_question)
             response[f"Q{index + 1}"] = answer
         
         # Medication and doses section
