@@ -1,11 +1,11 @@
-from utilities import is_valid_number, is_valid_string
+from validators import is_valid_number, is_valid_string
 
 class Question:
     def __init__(self, question, q_type, id):
         self.question = question
         self.q_type = q_type
         self.id = id
-  
+
     def answers(self):
         while True:
             answer = input(f"\U0001F4DD {self.question}: \n\t") 

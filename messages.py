@@ -1,5 +1,3 @@
-from utilities import is_valid_number
-
 def welcome_msg():
     print("\n" + "=" * 50)
     print("BIENVENIDO A \U0001F9E0".center(50, " "))
@@ -18,15 +16,8 @@ def bye_msg():
     print("\nHasta pronto \U0000270C  \U0001F9EC \n")
 
 def menu():
-    while True:
-        print("\n¿Que accion deseas realizar? \U0001F914")
-        print("\n1. preguntas al despertar \U0001F3DC")
-        print("2. preguntas al acostarse \U0001F303")
-        print("3. administracion de medicamentos \U0001F48A")
-        print("4. Salir\n")
-        response = input("\U0001F48A Ingrese la opcion deseada por favor: \n\t")
-        result = is_valid_number(response,1,4)
-        if result == "Ok":
-            return response
-        else:
-            print(result)
+    print("\n¿Que accion deseas realizar? \U0001F914")
+    print("\n1. preguntas al despertar \U0001F3DC")
+    print("2. preguntas al acostarse \U0001F303")
+    print("3. administracion de medicamentos \U0001F48A")
+    print("4. Salir\n")
