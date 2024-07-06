@@ -1,7 +1,8 @@
-from datetime import datetime, timedelta
+from datetime import datetime 
 
 def medication_survey():
     # Medication and doses section
+    total_date = {}
     medications = {}
     while True:
         med_name = input("\U0001F48A Ingrese el nombre del medicamento (o presione Enter para finalizar): \n\t")
@@ -16,6 +17,9 @@ def medication_survey():
             doses.append(dose)
             dose_count += 1
         medications[med_name] = doses
-    medications['date'] =  (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-    return medications
+    date_med =  datetime.now().strftime("%Y-%m-%d")
+
+    total_date[date_med] = medications
+    
+    return total_date
     

@@ -19,7 +19,7 @@ def valid_question_time():
     while True:
         menu()
         response = input("\U0001F48A Ingrese la opcion deseada por favor: \n\t")
-        result = is_valid_number(response,1,4)
+        result = is_valid_number(response,1,5)
         if result == "Ok":
             return response
         else:

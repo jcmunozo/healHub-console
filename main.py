@@ -1,8 +1,9 @@
 import sys
+import os
 from survey import Survey
 from messages import welcome_msg, bye_msg 
 from medication import medication_survey
-from manage_json import load_existing_responses, save_to_json
+from manage_json import load_existing_responses, save_to_json, transform_json_structure
 from creator import create_night_questions, create_day_questions 
 from validators import valid_question_time 
 
@@ -20,6 +21,9 @@ if __name__ == '__main__':
             responses_med = load_existing_responses(True)
             responses_med.append(results)
             save_to_json('medication_responses.json', responses_med)
+        elif question_time == '4':
+            transform_json_structure()
+            os.remove('survey_responses.json')
         elif question_time in ['1','2']:
             if question_time == '1':
                 questions = create_day_questions()

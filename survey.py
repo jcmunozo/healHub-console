@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 from manage_json import load_existing_responses, save_to_json
 
 class Survey:
@@ -8,13 +8,12 @@ class Survey:
 
 
     def conduct_survey(self):
-        print(type(self.responses))
         response = {}
         for question in self.questions:
             answer = question.answers()
             response[f"Q{question.id}"] = answer
         
-        response['date'] =  (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        response['date'] =  datetime.now().strftime("%Y-%m-%d")
  
         self.responses.append(response)
 
