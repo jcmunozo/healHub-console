@@ -1,4 +1,3 @@
-from datetime import datetime
 from manage_json import load_existing_responses, save_to_json
 
 class Survey:
@@ -13,8 +12,6 @@ class Survey:
             answer = question.answers()
             response[f"Q{question.id}"] = answer
         
-        response['date'] =  datetime.now().strftime("%Y-%m-%d")
- 
         self.responses.append(response)
 
     def execute_survey(self):

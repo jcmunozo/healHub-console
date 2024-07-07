@@ -1,5 +1,7 @@
 import json
 import os
+from datetime import datetime
+from datetime import timedelta
 
 def load_existing_responses(ismed=False):
 
@@ -26,14 +28,15 @@ def transform_json_structure():
     with open('survey_responses.json', 'r') as f:
         data = json.load(f)
     
+    date =  (datetime.now()- timedelta(days=1)).strftime("%Y-%m-%d")
+    
     result = {}
     
     for item in data:
-        date = item.pop('date')
-        
+
         if date not in result:
-            result[date] = {}
-        
+            result[date]={}
+
         result[date].update(item)
     
     with open('survey_unified.json', 'w') as f:
