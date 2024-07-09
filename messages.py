@@ -10,9 +10,11 @@ def welcome_msg():
     print("\n","Tu salud importa! Empecemos ... \U0001F680".center(50, " "), "\n")
 
 def bye_msg():
-    print("\nGracias por completar la session \U0001F601 . Sus respuestas han sido guardadas \U0001F37B.")
-    print("\nSesion terminada \U0001F389. Esperamos volverte a ver para continuar con el seguimiento \U0001F510")
-    print("\nHasta pronto \U0000270C  \U0001F9EC \n")
+    print("\n" + "=" * 50)
+    print("Gracias por completar la session \U0001F601".center(50, " "))
+    print("Sus respuestas han sigo guardadas \U0001F510".center(50, " "))
+    print("Hasta pronto \U0000270C  \U0001F9EC ".center(50, " "))
+    print("\n" + "=" * 50)
 
 def menu():
     print("\n" + "=" * 50)
