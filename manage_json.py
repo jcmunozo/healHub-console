@@ -2,6 +2,7 @@ import json
 import os
 from datetime import datetime
 from datetime import timedelta
+from messages import error_msg, successfull_msg
 
 def load_existing_responses(ismed=False):
 
@@ -25,22 +26,33 @@ def save_to_json(filename, responses):
         json.dump(responses, f, indent=2)
 
 def transform_json_structure():
-    with open('survey_responses.json', 'r') as f:
-        data = json.load(f)
-    
+    try:
+        with open('survey_responses.json', 'r') as f:
+            data = json.load(f)
+    except:
+        return error_msg()
+
     date =  (datetime.now()- timedelta(days=1)).strftime("%Y-%m-%d")
-    
+
     result = {}
-    
+    final = {}
+
     for item in data:
+        result.update(item)
 
-        if date not in result:
-            result[date]={}
+    final[date] = sort_data(result)
 
-        result[date].update(item)
-    
     with open('survey_unified.json', 'w') as f:
-        json.dump(result, f, indent=2)
+        json.dump(final, f, indent=2)
     
-    print(f"Transformed JSON written to survey_unified.json")
+    successfull_msg()    
+    os.remove('survey_responses.json')
 
+def sort_data(data):
+    keys = data.keys()
+    sorted_keys = sorted(keys)
+
+    sorted_data = {}
+    for key in sorted_keys:
+        sorted_data[key] = data[key]
+    return sorted_data

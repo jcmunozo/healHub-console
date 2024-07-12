@@ -1,5 +1,4 @@
 import sys
-import os
 from survey import Survey
 from messages import welcome_msg, bye_msg 
 from medication import medication_survey
@@ -23,7 +22,6 @@ if __name__ == '__main__':
             save_to_json('medication_responses.json', responses_med)
         elif question_time == '4':
             transform_json_structure()
-            os.remove('survey_responses.json')
         elif question_time in ['1','2']:
             if question_time == '1':
                 questions = create_day_questions()
