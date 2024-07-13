@@ -32,6 +32,9 @@ def transform_json_structure():
     except:
         return error_msg()
 
+    if len(data) > 2 or len(data)<2:
+        return error_msg()
+
     date =  (datetime.now()- timedelta(days=1)).strftime("%Y-%m-%d")
 
     result = {}
