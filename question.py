@@ -1,10 +1,10 @@
 from validators import is_valid_number, is_valid_string
 
 class Question:
-    def __init__(self, question, q_type, id):
+    def __init__(self, question, q_type, id: int):
         self.question = question
         self.q_type = q_type
-        self.id = id
+        self.id: int = id
 
     def answers(self):
         while True:

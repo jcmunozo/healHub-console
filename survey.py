@@ -6,7 +6,7 @@ class Survey:
         self.responses = load_existing_responses()
 
 
-    def conduct_survey(self):
+    def conduct_survey(self) -> None:
         response = {}
         for question in self.questions:
             answer = question.answers()
